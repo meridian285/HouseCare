@@ -1,0 +1,148 @@
+.projects {
+  padding-top: 92px;
+  padding-bottom: 120px;
+  .container();
+
+  .projects__title {
+    .font-title();
+    font-size: clamp(30px, 3.33vw, 40px);
+  }
+
+  .projects__items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    margin-top: 69px;
+
+    .accordion-title {
+      position: relative;
+      font-size: 18px;
+      color: @grey;
+      font-family: "MuseosanscyrlNormal", sans-serif;
+      text-align: center;
+      cursor: pointer;
+
+      .image-arrow {
+        margin-left: 10px;
+        transition: transform .2s ease-in-out;
+      }
+    }
+
+    .accordion-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 120px;
+    }
+
+    .justify-item-end {
+      justify-items: end;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(487px, 1fr));
+      grid-template-rows: 30px 1fr;
+      column-gap: 20px;
+
+      @media screen and (width < 1024px) {
+        grid-template-columns: 1fr;
+        row-gap: 33px;
+        justify-items: center;
+      }
+
+      .item__images {
+        grid-row-end: span 3;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 20px;
+        column-gap: 24px;
+
+        .item__image {
+          img {
+            width: 100%;
+          }
+
+          &:first-child {
+            grid-column: 1 / 4;
+          }
+        }
+      }
+
+      .project-title {
+        width: 487px;
+        font-size: clamp(18px, 2.5vw, 30px);
+        font-family: "MuseosanscyrlBold", sans-serif;
+        color: @white-color;
+
+        @media screen and (width < 1024px) {
+          width: 100%;
+          text-align: center;
+          order: -1;
+        }
+      }
+
+      .item__content {
+        max-width: 487px;;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 52px;
+
+        @media screen and (width < 1024px) {
+          width: 100%;
+        }
+
+        .project-text {
+          margin-top: 46px;
+          font-size: clamp(14px, 1.5vw, 18px);
+          font-family: "MuseosanscyrlNormal", sans-serif;
+          color: @white-color;
+
+          @media screen and (width < 1024px) {
+            margin-top: 0;
+          }
+        }
+
+        .circles {
+          display: flex;
+          justify-content: space-between;
+
+          .circle {
+            width: clamp(85px, 9.17vw, 110px);
+            height: clamp(85px, 9.17vw, 110px);
+            .circle-common();
+            padding: 15px;
+
+            span {
+              font-size: clamp(15px, 1.67vw, 20px);
+              color: @gold-color;
+              font-family: "MuseosanscyrlNormal", sans-serif;
+
+              sup {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+
+        .content__active {
+          @media screen and(width < 1024px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .project-button {
+            width: clamp(290px, 30vw, 365px);
+            font-size: clamp(16px, 30vw, 18px);
+            box-sizing: border-box;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

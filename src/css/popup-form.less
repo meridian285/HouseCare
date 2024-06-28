@@ -1,0 +1,203 @@
+// popup Консультация
+.popup-statement {
+  width: 500px;
+  display: none;
+  padding: 20px 10px 20px 10px;
+  background-color: #313139;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  flex-direction: column;
+  align-items: center;
+
+  .form-title {
+    .font-title();
+    margin-bottom: 10px;
+    font-size: clamp(30px, 3.33vw, 40px);
+
+  }
+
+  .form-popup {
+    display: flex;
+    flex-direction: column;
+
+    .button {
+      width: 408px;
+      height: 56px;
+      margin-top: 20px;
+      text-align: left;
+      padding-left: 30px;
+      padding-right: 30px;
+      font-family: "MuseosanscyrlRegular", sans-serif;
+
+      &::placeholder {
+        text-align: left;
+
+        font-size: 18px;
+        color: @white-color;
+        font-family: "MuseosanscyrlRegular", sans-serif;
+      }
+
+      @media screen and(width < 800px) {
+        width: 100%;
+      }
+    }
+
+    .error {
+      border-color: red;
+    }
+
+    .action {
+      .btn {
+        font-size: 18px;
+        color: #25252d;
+        font-family: "MuseosanscyrlBold", sans-serif;
+        text-align: center;
+        line-height: 0;
+      }
+
+      button {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .checkbox-popup {
+      margin-top: 20px;
+      width: 401px;
+      position: relative;
+
+      @media screen and(width < 800px) {
+        margin: 20px auto;
+      }
+
+      @media screen and(width < 500px) {
+        width: 100%;
+      }
+
+      --opacity: 0;
+
+      .form__checkbox {
+        -webkit-appearance: none;
+        appearance: none;
+        position: absolute;
+      }
+
+      .checkbox__label {
+        font-size: 20px;
+        color: @white-color;
+
+        p {
+          padding-left: 40px;
+          font-size: 14px;
+          font-family: MuseosanscyrlRegular, sans-serif;
+          color: rgb(255, 255, 255);
+          line-height: 1.286;
+          letter-spacing: 1px;
+
+          a {
+            color: @white-color;
+          }
+        }
+
+        &:hover {
+          box-shadow: #ddd;
+          cursor: pointer;
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          width: 20px;
+          height: 20px;
+          border: 1px solid @white-color;
+          position: absolute;
+          top: 5px;
+          left: 0;
+          z-index: 1;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          width: 30px;
+          height: 30px;
+
+          background: url("../images/svg/icons8.svg") no-repeat;
+          background-size: 30px 30px;
+          opacity: var(--opacity);;
+
+          position: absolute;
+          top: -4px;
+          left: 0px;
+          z-index: 2;
+        }
+      }
+
+      .form__checkbox:checked ~ .checkbox__label::after {
+        opacity: var(--opacity);
+      }
+
+      #checkboxPopup-error {
+        padding: 5px 0 0 39px;
+        color: red;
+        z-index: 0;
+      }
+    }
+
+    #name-error {
+      padding: 5px 0 0 10px;
+      color: red;
+    }
+
+    #phone-error {
+      padding: 5px 0 0 10px;
+      color: red;
+    }
+
+    // form-popup
+
+    #name-popup-error {
+      padding: 5px 0 0 10px;
+      color: red;
+    }
+
+    #phone-popup-error {
+      padding: 5px 0 0 10px;
+      color: red;
+    }
+  }
+
+  .success-message {
+    margin-top: 25px;
+    display: none;
+    border: 1px solid green;
+    width: 100%;
+    height: auto;
+    padding: 60px 0px 60px 0px;
+    font-size: 30px;
+    font-family: MuseosanscyrlBold, sans-serif;
+    text-align: center;
+    color: green;
+  }
+
+  .close {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    z-index: 11;
+
+    &:hover {
+      opacity: 50%;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and(width < 550px) {
+    width: 80%;
+    padding: clamp(10px, 4vw, 50px);
+  }
+}

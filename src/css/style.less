@@ -1,0 +1,690 @@
+@import "fonts";
+@import "variables";
+@import "swiper";
+@import "footer";
+@import "technologies";
+@import "projects";
+@import "header";
+@import "popup-form";
+@import "form-main";
+
+.container() {
+  max-width: 1200px;
+  margin: 0 auto;
+  @media screen and (width < 1230px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.container-cards() {
+  max-width: 487px;
+}
+
+.font-title {
+  color: @gold-color;
+  font-weight: 400;
+  font-family: "Neumann", serif;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+//белый текст на странице
+.white-text {
+  color: @white-color;
+}
+
+//внешний круг
+.technologies__circle() {
+  border-width: 1px;
+  border-color: @gold-color;
+  border-style: solid;
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+}
+
+// внутренний круг
+.technologies__core() {
+  border-radius: 50%;
+  background-color: @gold-color;
+  box-shadow: 0px 0px 25.5px 4.5px rgba(0, 0, 0, 0.004);
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  z-index: 10;
+  .content {
+    @media screen and(width < 1250px) {
+      display: none;
+    }
+  }
+}
+
+// Табличка технология
+.steps-step() {
+  display: flex;
+  position: absolute;
+  top: 68px;
+  left: 11px;
+  font-size: clamp(14px, 1.5vw, 18px);
+  font-family: MuseosanscyrlRegular, sans-serif;
+  color: @white-color;
+  .item__icon {
+    svg {
+      fill: @gold-color;
+      stroke: @gold-color;
+
+      path {
+        fill: @gold-color;
+        stroke: @gold-color;
+      }
+    }
+  }
+  .info-text {
+    margin-left: 19px;
+    .info-text();
+    @media screen and(width < 1400px) {
+      width: 250px;
+    }
+    @media screen and(width < 500px) {
+      width: 200px;
+    }
+  }
+}
+
+.info-text() {
+  margin-left: 19px;
+
+  h4 {
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-family: MuseosanscyrlRegular, sans-serif;
+  }
+
+  p {
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-family: MuseosanscyrlRegular, sans-serif;
+  }
+}
+
+.circle-common() {
+  box-sizing: border-box;
+  border: 1px solid @gold-color;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-18-white() {
+  font-size: 18px;
+  font-family: MuseosanscyrlRegular, sans-serif;
+  color: @white-color;
+}
+
+
+.technology-content() {
+  .technology-title {
+    font-size: 18px;
+    font-family: Myriad-Pro, sans-serif;
+    color: @white-color;
+  }
+
+  .technology-text {
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: MuseosanscyrlRegular, sans-serif;
+    color: @white-color;
+  }
+}
+
+.social-icons() {
+  .instagram {
+    width: 30px;
+    height: 30px;
+    fill: @white-color;
+
+    &:hover {
+      opacity: 90%;
+    }
+  }
+
+  .telegram {
+    width: 35px;
+    height: 35px;
+
+    path {
+      fill: @white-color;
+      stroke: @white-color;
+    }
+
+    &:hover {
+      opacity: 90%;
+    }
+  }
+
+  .youtube {
+    width: 35px;
+    height: 35px;
+    fill: @white-color;
+
+    &:hover {
+      opacity: 90%;
+    }
+  }
+}
+
+.circle-call() {
+  border-radius: 50%;
+  background-color: @gold-color;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 5px;
+  left: -27px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 16px);
+    right: calc(50% - 16px);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    z-index: 0;
+    border: 2px solid rgb(255, 198, 0);
+    animation: pulse 2s infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 16px);
+    right: calc(50% - 16px);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    z-index: 0;
+    border: 2px solid rgb(255, 198, 0);
+    animation: pulse 2s infinite 0.5s;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.btn {
+  display: inline-block;
+  padding: 21px;
+  border-radius: 40px;
+  background-image: @btn-gradient;
+  color: @black-color;
+  font-family: MuseosanscyrlExtraBold, serif;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0px 0px 6px 0px @white-color;
+  }
+}
+
+.main-section {
+  background-color: @black-color;
+  padding-bottom: 160px;
+
+  .download-button {
+    width: clamp(290px, 30vw, 365px);
+    margin-top: 20px;
+    font-size: clamp(15px, 1.5vw, 18px);
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid @white-color;
+    color: @white-color;
+  }
+
+  .steps {
+    .container();
+    margin-top: 224px;
+
+    .steps__title {
+      margin-bottom: 48px;
+      .font-title();
+      font-size: clamp(30px, 3.33vw, 40px);
+    }
+
+    .steps__items {
+      padding-left: 102px;
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 349px 451px 379px;
+      grid-template-rows: 240px 240px;
+
+      @media screen and (width < 1400px) {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 320px));
+        justify-content: center;
+      }
+
+      @media screen and (width < 1099px) {
+        padding-left: 0;
+      }
+
+      @media screen and (width < 400px) {
+        word-break: break-all;
+      }
+
+      .step-text {
+        width: 350px;
+        height: 230px;
+        position: relative;
+        font-size: 70px;
+        font-family: "Neumann", serif;
+        color: @grey-steps;
+        @media screen and(width < 800px) {
+          width: 300px;
+        }
+      }
+
+      .step__item-1 {
+        .item-1__info {
+          width: 270px;
+          .steps-step();
+
+          a {
+            color: @white-color;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .step__item-2 {
+        .item-2__info {
+          width: 335px;
+          .steps-step();
+
+          @media screen and(width < 500px) {
+            width: 270px;
+          }
+        }
+      }
+
+      .step__item-3 {
+        .item-3__info {
+          width: 317px;
+          .steps-step();
+
+          @media screen and(width < 500px) {
+            width: 270px;
+          }
+        }
+      }
+
+      .step__item-4 {
+        .item-4__info {
+          width: 292px;
+          .steps-step();
+
+          @media screen and(width < 500px) {
+            width: 270px;
+          }
+        }
+      }
+
+      .step__item-5 {
+        .item-5__info {
+          width: 387px;
+          .steps-step();
+
+          @media screen and(width < 500px) {
+            width: 270px;
+          }
+        }
+      }
+
+      .step__item-6 {
+        .item-6__info {
+          width: 278px;
+          .steps-step();
+
+          @media screen and(width < 500px) {
+            width: 270px;
+          }
+
+          .item__icon {
+            svg {
+              fill: @gold-color;
+              stroke: @gold-color;
+
+              path {
+                fill: @black-color;
+                stroke: @gold-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .results {
+    .container();
+
+    .results__title {
+      .font-title();
+      font-size: clamp(30px, 3.33vw, 40px);
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.guarantees {
+  .container();
+
+  .guarantees-title {
+    margin-top: 120px;
+    .font-title();
+    font-size: clamp(30px, 3.33vw, 40px);
+  }
+
+  .guarantees-grid {
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+
+    .guarantees__content {
+      padding: 30px 40px 30px 40px;
+      background-color: #313139;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      @media screen and(width < 800px) {
+        padding: 10px;
+        align-items: flex-start;
+      }
+
+      .content__icon {
+        .icon {
+          fill: @gold-color;
+        }
+      }
+
+      .content__text {
+        margin-left: 24px;
+
+        h4 {
+          margin-bottom: 15px;
+          .text-18-white();
+        }
+
+        p {
+          .text-18-white();
+
+          span {
+            white-space: pre-line;
+          }
+        }
+      }
+    }
+  }
+
+  .conditions-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    @media screen and(width < 800px) {
+      gap: 44px;
+    }
+
+    .condition-item {
+      width: 269px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+
+      .icon-circle {
+        .circle-common();
+        width: 140px;
+        height: 140px;
+
+        .icon {
+          width: 75px;
+          height: 75px;
+
+          path {
+            fill: @gold-color;
+            stroke: @gold-color;
+          }
+        }
+      }
+
+      h4 {
+        .text-18-white();
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        width: 257px;
+        .text-18-white();
+      }
+    }
+  }
+
+  .active {
+    margin-top: 60px;
+    text-align: center;
+
+    .download-button {
+      width: clamp(290px, 30vw, 384px);
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+
+/* section map */
+
+.map {
+  .container();
+  padding-top: 100px;
+  position: relative;
+
+  .map-image {
+    padding-top: 205px;
+    padding-bottom: 66px;
+    width: 100%;
+    background-image: url(../images/map.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .map__content {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: clamp(300px, 21vw, 440px);
+
+      .content-title {
+        .font-title();
+        margin-bottom: 33px;
+        font-size: clamp(30px, 3.41vw, 60px);
+        line-height: 1.167;
+        text-align: center;
+      }
+
+      .text {
+        margin-bottom: 40px;
+        font-size: 18px;
+        line-height: 23px;
+        color: @white-color;
+        font-family: MuseosanscyrlNormal, sans-serif;
+        text-align: center;
+      }
+
+      .content_active {
+        button {
+          width: 360px;
+          height: 60px;
+          box-sizing: border-box;
+
+          font-size: 18px;
+          font-family: MuseosanscyrlExtraBold, sans-serif;
+          color: rgb(37, 37, 45);
+          cursor: pointer;
+
+          @media screen and(width < 500px) {
+            width: 280px;
+          }
+        }
+      }
+    }
+  }
+
+  .markers {
+    display: inline-block;
+    background-color: transparent;
+    position: relative;
+
+
+    .marker {
+      stroke: @gold-color;
+      position: absolute;
+      top: 89px;
+      left: 1px;
+
+
+      path {
+        stroke: @gold-color;
+      }
+
+      line {
+        stroke: @gold-color;
+      }
+    }
+
+    @media screen and(width < 1200px) {
+      display: none;
+    }
+  }
+
+  .marker-on-map1 {
+    top: -490px;
+    left: 143px;
+  }
+
+  .marker-on-map2 {
+    top: -334px;
+    left: 125px;
+  }
+
+  .marker-on-map3 {
+    top: -427px;
+    left: 236px;
+  }
+
+  .marker-on-map4 {
+    top: -348px;
+    left: 264px;
+  }
+
+  .marker-on-map5 {
+    top: -383px;
+    left: 309px;
+  }
+
+  .marker-on-map6 {
+    top: -298px;
+    left: 327px;
+  }
+
+  .marker-on-map7 {
+    top: -393px;
+    left: 837px;
+  }
+
+  .marker-on-map8 {
+    top: -482px;
+    left: 926px;
+  }
+
+  .marker-on-map9 {
+    top: -334px;
+    left: 921px;
+  }
+
+  .marker-on-map10 {
+    top: -265px;
+    left: 869px;
+  }
+
+  .marker-on-map11 {
+    top: -238px;
+    left: 903px;
+  }
+}
+
+// скролл вниз "Листайте вниз"
+.scroll-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: -71px;
+  top: 459px;
+  transform: rotate(-90deg);
+
+  span {
+    font-size: 18px;
+    font-family: "MuseosanscyrlNormal", sans-serif;
+    color: rgb(186, 186, 186);
+  }
+
+  .arrow {
+    path {
+      fill: #bbbbbb;
+    }
+  }
+
+  @media screen and(width < 500px) {
+    display: none;
+  }
+}
+
+.turn-transform {
+  transform: rotate(180deg);
+}
+
+
+// анимация
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

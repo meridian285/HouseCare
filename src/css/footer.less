@@ -1,0 +1,101 @@
+/* footer */
+
+.footer-section {
+  background-color: @black-color;
+
+  .footer-block {
+    padding: 50px 0 115px 0;
+    border-top: 1px solid #363d51;
+
+    .footer {
+      .container();
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(273px, 1fr));
+      align-content: center;
+      align-items: center;
+
+      @media screen and(width < 850px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+      }
+
+      .info {
+        p {
+          color: @white-color;
+          font-size: 18px;
+          font-family: MuseosanscyrlNormal, sans-serif;
+        }
+
+        .time {
+          padding-top: 30px;
+        }
+      }
+
+      .logo {
+        justify-self: center;
+        text-align: center;
+
+        .social {
+          display: flex;
+          justify-content: space-between;
+          width: 161px;
+          padding-top: 50px;
+
+          .social-icons();
+        }
+
+        @media screen and(width < 850px) {
+          order: -1;
+        }
+      }
+
+      .contacts {
+        text-align: end;
+        justify-items: end;
+
+        span {
+          font-size: 18px;
+          line-height: 15px;
+          color: @white-color;
+          font-family: 'MuseosanscyrlBold', sans-serif;
+          justify-self: end;
+          display: block;
+        }
+
+        a {
+          display: inline-block;
+          margin-top: 20px;
+          text-decoration: none;
+
+          font-size: 16px;
+          line-height: 15px;
+          color: @gold-color;
+          font-family: 'MuseosanscyrlBold', sans-serif;
+        }
+
+        .order-call {
+          position: relative;
+          cursor: pointer;
+          display: inline;
+          padding-bottom: 5px;
+          border-bottom: 1px solid transparent;
+
+          .circle-call {
+            .circle-call();
+          }
+
+          &:hover {
+            border-bottom: 1px solid @gold-color;
+          }
+        }
+
+        @media screen and(width < 800px) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
